@@ -1,20 +1,13 @@
 {
-  "name": "coders-lab-exercises",
-  "private": true,
-  "version": "4.5.0",
-  "type": "module",
+  "name": "sass",
+  "version": "2.0.0",
+  "source": ".",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "devDependencies": {
-    "eslint": "8.49.0",
-    "eslint-config-prettier": "9.0.0",
-    "prettier": "3.0.3",
-    "vite": "4.4.5"
-  },
-  "dependencies": {
-    "sass": "1.67.0"
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0"
   }
 }
