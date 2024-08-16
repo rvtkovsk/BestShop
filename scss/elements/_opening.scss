@@ -1,0 +1,32 @@
+.opening {
+
+    // wyśrodkowanie sekcji
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // wyśrodkowanie zawartości np napisów
+    &__content {
+        margin-top: 130px;
+        text-align: center;
+      }
+
+    //   stylowanie nagłówka
+      &__header {
+        font-family: $font-raleway;
+        font-size: 3.0625rem;
+      }  
+
+    //   Odstępy w środkowym napisie
+      &__heading {
+        margin-top: 20px;
+        margin-bottom: 38px;
+      }
+
+    //  czy to jest potrzebne?  
+      &__image {
+        width: 100%;
+        height: auto;
+      }
+
+}
