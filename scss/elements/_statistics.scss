@@ -1,0 +1,92 @@
+.statistics {
+    margin-top: 100px;
+  
+    // ustawia tekst na środku
+    &__title {
+      text-align: center;
+    }
+    
+    // ustawia elementy na środku z odstępami
+    &__container {
+      max-width: 800px;
+      margin: 100px auto 120px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    
+    &__single {
+     // ustawia "elementy elementów" odpowiednio
+      max-width: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      font-family: $font-raleway;
+  
+      &:nth-child(1) {
+        // dodaje kółko
+        .statistics__circle {
+          background-color: $color-redish;
+        }
+        
+        // przesuwa obrazek blizej srodka kółka
+        .statistics__img {
+          top: 0;
+          left: 45%;
+        }
+      }
+      
+      //jak wyzej
+      &:nth-child(2) {
+        .statistics__circle {
+          background-color: $color-primary;
+        }
+  
+        .statistics__img {
+          top: 14px;
+          left: 47%;
+        }
+      }
+  
+      //jak wyzej
+      &:nth-child(3) {
+        .statistics__circle {
+          background-color: $color-green;
+        }
+  
+        .statistics__img {
+          top: 6px;
+          left: 50%;
+        }
+      }
+    }
+  
+    // Ustawienia kołek
+    &__circle {
+      border-radius: 50%;
+      width: 63px;
+      height: 63px;
+      position: relative;
+    }
+    
+    // Ustawienie obrazków
+    &__img {
+      position: absolute;
+    }
+  
+    // Ustawienie liczny
+    &__number {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.1875rem;
+      margin-top: 13px;
+    }
+  
+    // Ustawienie opisu
+    &__description {
+      color: $color-grey;
+      margin-top: 19px;
+    }
+  }
