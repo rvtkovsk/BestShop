@@ -4,11 +4,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    // usuniecie scroll bara i sprawienie ze obrazek zostanie ucięty
+    overflow: hidden;
 
     // wyśrodkowanie zawartości np napisów
     &__content {
         margin-top: 130px;
         text-align: center;
+
+        // zmniejszenie marginesu górnego dla mobilki
+        @include mobile {
+          margin-top: 100px;
+        }
       }
 
     //   stylowanie nagłówka
@@ -21,12 +28,32 @@
       &__heading {
         margin-top: 20px;
         margin-bottom: 38px;
+
+        // zawijanie tresci dla mobilki
+        @include mobile {
+          padding: 0 70px;
+        }
       }
 
     //  czy to jest potrzebne?  
       &__image {
         width: 100%;
         height: auto;
+
+        // wysrodkowanie obrazka dla mobilki
+        @include mobile {
+          width: 220%;
+          transform: translateX(-28%);
+        }
+      }
+
+      // dobre wyświetlanie buttona w mobile
+      @include mobile {
+        .btn {
+          margin: 0 15px;
+          padding: 16px 0;
+          display: block;
+        }
       }
 
 }
