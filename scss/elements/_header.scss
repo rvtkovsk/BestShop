@@ -15,7 +15,35 @@
 
       &__nav {
         display: flex;
+
+        // Stylowanie hamburger menu zamiast calego menu po boku dla mobilki
+
+        @include mobile {
+          // position absolute bo ma przykrywac sekcje otwierającą
+          position: absolute;
+          left: 0;
+          // top 95px bo ma przykrywac belke naglowka
+          top: 95px;
+          // column bo elementy mają byc pod sobą
+          flex-direction: column;
+          background-color: white;
+          width: 100%;
+          padding-bottom: 20px;
+          // display none bo ma być widoczna tylko dla mobilki, domyslnie nie 
+          display: none;
+    
+          // zmiana paddingu
+          .nav__element {
+            padding: 0;
+          }
+    
+          .nav__link {
+            display: block;
+            padding: 14px 20px;
+          }
+        }
       }
+  
 
     //   Ustawienie odstępu pomiędzy linkami 
 
@@ -27,6 +55,7 @@
             padding-right: 0;
           }
         } 
+
         }    
 
     // stylowanie linków - czy to działa???
@@ -45,5 +74,42 @@
             color: $color-black;
             border-color: $color-primary;
           }
+
+          
         
 }
+
+  // Poniszy kod ukrywa checkboxa, w tym przypadku potrzebne są tylko jego własciwosci
+  .menu {
+    &__btn {
+      display: none;
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      opacity: 0;
+    }
+    
+    // Ukrycie elementu, który ma być widoczny tylko na mobilce
+    &__toggle {
+      display: none;
+    
+      // hamburger
+      span {
+        width: 20px;
+        height: 2px;
+        display: block;
+        margin-bottom: 3px;
+        background-color: $color-primary;
+        transition: .3s all ease-in-out;
+    
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    
+      // wyświetlanie na mobilce
+      @include mobile {
+        display: block;
+      }
+    }
+  }
