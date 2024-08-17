@@ -17,14 +17,28 @@
 
     <a href="#" class="logo">BestShop</a>
 
+     <!-- ze względu na "hamburger icon" który ma się pojawić w wersji mobilnej naszej strony.
+
+    Po kliknięciu menu powinno się otworzyć zaraz pod logotypem, przysłaniając sekcję otwierającą.
+
+    W elemencie nav w klasie .header__container wstawmy input[type="checkbox"] dzięki któremu będziemy wiedzieć czy nasze menu powinno być otwarte czy nie.
+
+    Umieścimy tam również element label który będzie powiązany z checkboxem (atrybut for i id), w którym znajdą się 3 elementy span. Będą one imitowały ikonę hamburgera a także "X" w zależności od stanu naszego menu. -->
+
     <nav>
-      <ul class="header__nav">
-        <li class="nav__element"><a href="#why-us" class="nav__link">Why us</a></li>
-        <li class="nav__element"><a href="#benefits" class="nav__link">Benefits</a></li>
-        <li class="nav__element"><a href="#prices" class="nav__link">Prices</a></li>
-        <li class="nav__element"><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-    </nav>
+        <input type="checkbox" class="menu__btn" id="menu__btn">
+        <label for="menu__btn" class="menu__toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="header__nav">
+          <li class="nav__element"><a href="#why-us" class="nav__link">Why us</a></li>
+          <li class="nav__element"><a href="#benefits" class="nav__link">Benefits</a></li>
+          <li class="nav__element"><a href="#prices" class="nav__link">Prices</a></li>
+          <li class="nav__element"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
 
     </div>
   
