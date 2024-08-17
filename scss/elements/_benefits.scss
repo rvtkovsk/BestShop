@@ -3,6 +3,11 @@
     // odstep i kolor tła
     padding: 100px 0;
     background-color: $color-light-grey;
+
+    // odstepy dla wersji tablet, bo ta sekcja duzo wczesniej zle wygląda
+    @include tablet {
+      padding: 50px 0;
+    }
     
     // odstęp dla kontenera
     &__container {
@@ -159,4 +164,6 @@
         z-index: 2;
       }
     }
+
+    
   }
