@@ -4,12 +4,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include notebook {
+      margin: 50px auto;
+    }
+    
     
     &__boxes {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-top: 50px;
+
+      @include notebook {
+        flex-direction: column;
+        width: 100%;
+      }
+      
     }
   
     &__box {
@@ -19,6 +30,20 @@
       flex-direction: column;
       align-items: center;
       border: 1px solid var(--accent-color);
+
+      @include notebook {
+        width: 100%;
+        max-width: 370px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        justify-content: center;
+        padding: 25px 10px 0 10px;
+      
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
   
       .btn {
         position: relative;
@@ -35,6 +60,10 @@
   
         .pricing__price {
           margin-bottom: 30px;
+
+          @include notebook {
+            margin-bottom: 0;
+          }
         }
       }
   
@@ -44,6 +73,12 @@
         width: 400px;
         margin: 0 40px;
         box-shadow: 5px 1px 27px $color-primary-shadow;
+
+        @include notebook {
+          max-width: 400px;
+          width: 100%;
+          margin: 0 0 50px 0;
+        }
   
         .pricing {
           &__type {
@@ -66,6 +101,11 @@
       margin-top: 34px;
       margin-bottom: 60px;
       text-align: center;
+
+      @include notebook {
+        width: 50%;
+        margin: 0;
+      }
     }
   
     &__type {
@@ -92,11 +132,22 @@
   
     &__items {
       text-align: center;
+
+      @include notebook {
+        width: 50%;
+        text-align: left;
+      }
     }
   
     &__item {
       font-size: 14px;
       margin-bottom: 20px;
+
+      @include notebook {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
   
       &::before {
         content: "";
@@ -112,3 +163,12 @@
       }
     }
   }
+
+  // Dosyć dużo dzieje się w samych boksach określających ceny za poszczególne pakiety. Układ staje się rzędowy i wyśrodkowany w osi pionowej. W kodzie HTML jednego boksa znajdują się bezpośrednio trzy elementy:
+
+// .pricing__details,
+// .pricing__items,
+// .btn.
+// Zmiana kierunku flexa sprawi, że wszystkie trzy elementy ułożą się obok siebie. My jednak chcemy aby przycisk był zawsze na dole. Jak sobie z tym poradzić, nie zmieniając kodu HTML?
+
+// Do każdego selektora &__box dodamy flex-wrap: wrap tak aby elementy zawijały się pod sobą, a klasom .pricing__details i .pricing__items nastawimy width: 50%
