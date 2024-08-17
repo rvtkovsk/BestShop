@@ -87,6 +87,33 @@
       top: -9999px;
       left: -9999px;
       opacity: 0;
+
+      // Przeksztalcenie menu w mobilce tak aby sie pokazywalo po kliknieciu
+
+      @include mobile {
+        &:checked {
+          ~ .header__nav {
+            display: flex;
+          }
+      
+          // przeksztalcenie hamburger na X po kliknieciu
+          ~ .menu__toggle {
+            span {
+              &:nth-child(1) {
+                transform: rotate(45deg) translate(2px, 5px);
+              }
+              &:nth-child(2) {
+                opacity: 0;
+              }
+              &:nth-child(3) {
+                transform: rotate(-45deg) translate(2px, -5px);
+              }
+            }
+          }
+        }
+      }
+
+      
     }
     
     // Ukrycie elementu, który ma być widoczny tylko na mobilce
