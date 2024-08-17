@@ -12,6 +12,13 @@
       margin: 100px auto 120px;
       display: flex;
       justify-content: space-between;
+
+      // zmiana ułozenia dla mobile
+      @include mobile {
+        margin: 35px auto 50px;
+        align-items: center;
+        flex-direction: column;
+      }
     }
     
     
@@ -24,6 +31,15 @@
       align-items: center;
       text-align: center;
       font-family: $font-raleway;
+
+      // odsuniecie od siebie elementów dla mobilnej wersji
+      @include mobile {
+        margin-bottom: 35px;
+      
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
   
       &:nth-child(1) {
         // dodaje kółko
@@ -88,5 +104,10 @@
     &__description {
       color: $color-grey;
       margin-top: 19px;
+    }
+
+    // zmiana marginesu dla mobilnej wersji
+    @include mobile {
+      margin-top: 50px;
     }
   }
