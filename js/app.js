@@ -61,4 +61,17 @@ function Calculator(form, summary) {
       this.updateSummary('package', text, this.prices.package[value]);
     }
   };
+
+  Calculator.prototype.checkboxEvent = function (e) {
+    const checkbox = e.currentTarget;
+    const id = checkbox.id;
+    const checked = e.currentTarget.checked;
+  
+    this.updateSummary(id, undefined, this.prices[id], function (item) {
+      if (!checked) {
+        item.classList.remove('open');
+      }
+    });
+  };
+  
   
