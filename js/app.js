@@ -74,4 +74,18 @@ function Calculator(form, summary) {
     });
   };
   
+  Calculator.prototype.addEvents = function () {
+    // Inputs
+    this.form.products.addEventListener('change', this.inputEvent.bind(this));
+    this.form.products.addEventListener('keyup', this.inputEvent.bind(this));
+    this.form.orders.addEventListener('change', this.inputEvent.bind(this));
+    this.form.orders.addEventListener('keyup', this.inputEvent.bind(this));
+  
+    // Select
+    this.form.package.addEventListener('click', this.selectEvent.bind(this));
+  
+    // Checkboxes
+    this.form.accounting.addEventListener('change', this.checkboxEvent.bind(this));
+    this.form.terminal.addEventListener('change', this.checkboxEvent.bind(this));
+  };
   
