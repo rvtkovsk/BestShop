@@ -30,4 +30,20 @@ function Calculator(form, summary) {
   }
   
 
-  Calculator.prototype.inputEvent = function (e) {};
+  Calculator.prototype.inputEvent = function (e) {
+    const id = e.currentTarget.id;
+    const value = e.currentTarget.value;
+    const singlePrice = this.prices[id];
+    const totalPrice = value * singlePrice;
+  
+    this.updateSummary(id, value + ' * $' + singlePrice, totalPrice, function (item, calc, total) {
+      if (value < 0) {
+        calc.innerHTML = null;
+        total.innerText = 'Value should be greater than 0';
+      }
+  
+      if (value.length === 0) {
+        item.classList.remove('open');
+      }
+    });
+  };
