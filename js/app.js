@@ -20,3 +20,12 @@ function Calculator(form, summary) {
     terminal: form.querySelector('#terminal'),
   };
   
+  this.summary = {
+    list: summary.querySelector('ul'),
+    items: summary.querySelector('ul').children,
+    total: {
+      container: summary.querySelector('#total-price'),
+      price: summary.querySelector('.total__price'),
+    },
+  };
+  
